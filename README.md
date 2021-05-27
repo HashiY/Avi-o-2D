@@ -3,9 +3,9 @@ Jogo de avião 2d
 
 2D 飛行機 ゲーム
 
-Estudei no curso da Udemy Aprenda - Unity Programando 7 Jogos
+Estudei no curso da Udemy - Aprenda Unity Programando 7 Jogos
 
-Udemyのコースで勉強しました - Unity Programando 7 Jogos
+Udemyのコースで勉強しました - Aprenda Unity Programando 7 Jogos
 
 https://www.udemy.com/course/curso-completo-unity-3d/
 
