@@ -8,7 +8,7 @@ public class ControlaJogador : MonoBehaviour {
 	private string sceneName;
 	private bool comecouJogo;
 	private bool acabouJogo; 
-	private int score, highscore;
+	private int score, highscore, i = 0;
 	public Text scoreText;
 	public Text startText;
 	public Text entryNameText;
@@ -21,8 +21,13 @@ public class ControlaJogador : MonoBehaviour {
 	Vector2 forcaImpulso = new Vector2(0,300); //
 
 	public GameObject objetoParticulasPenas;
- 
+
+	public AudioClip EnemyDead, PlayerDead;
+	public AudioClip[] Fly;
+	AudioSource audioSource;
+
 	void Start () {
+		audioSource = GetComponent<AudioSource>();
 		objetoGameEngine = GameObject.FindGameObjectWithTag("MainCamera");
 
 		float larguraTela = (Camera.main.orthographicSize*2f)/Screen.height*Screen.width;   
@@ -69,6 +74,9 @@ public class ControlaJogador : MonoBehaviour {
 				particula.transform.position = this.transform.position; 
 				GetComponent<Rigidbody2D>().velocity = Vector2.zero; // zera a velocidade
 				GetComponent<Rigidbody2D>().AddForce(forcaImpulso);  //clica sobe
+				audioSource.PlayOneShot(Fly[i], 0.3f);
+				i++;
+				if (i == 15) i = 0;
 			}
 
 			transform.rotation = Quaternion.Euler(0,0,GetComponent<Rigidbody2D>().velocity.y * 3f);//para impinar
@@ -79,6 +87,7 @@ public class ControlaJogador : MonoBehaviour {
 				if(!acabouJogo){
 					GetComponent<SpriteRenderer>().color = new Color(1f,0.75f,0.75f,1.0f);
 					acabouJogo = true;
+					audioSource.PlayOneShot(PlayerDead, 0.3f);
 					FimDejogo();
 				}
 //				Destroy(this.gameObject);
@@ -94,6 +103,7 @@ public class ControlaJogador : MonoBehaviour {
 			GetComponent<Rigidbody2D>().AddTorque(300f); // para girar
 			GetComponent<SpriteRenderer>().color = new Color(1f,0.75f,0.75f,1.0f); // muda cor
 			acabouJogo = true; // acaba
+			audioSource.PlayOneShot(PlayerDead, 0.3f);
 			Invoke("FimDejogo", 1);
 		}
 	} 
@@ -106,6 +116,7 @@ public class ControlaJogador : MonoBehaviour {
 	void Pontua(){
 		score++;
 		scoreText.text = score.ToString(); // atualizar a pontuaçao
+		audioSource.PlayOneShot(EnemyDead, 0.3f);
 
 		if (score > highscore)
 		{
