@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 328380903}
   - component: {fileID: 328380902}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImageBackgroundName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 875572907}
   - component: {fileID: 875572906}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 1466533437}
   - component: {fileID: 1466533436}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: ImageBackgroundScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1594,7 +1594,7 @@ GameObject:
   - component: {fileID: 1931233882}
   - component: {fileID: 1931233881}
   m_Layer: 5
-  m_Name: Ponto
+  m_Name: TextScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
