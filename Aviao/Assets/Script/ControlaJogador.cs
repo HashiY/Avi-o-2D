@@ -34,7 +34,7 @@ public class ControlaJogador : MonoBehaviour {
 		transform.position = new Vector2(-larguraTela/4,0f);
 
 		startText.transform.position = new Vector2(Screen.width / 2, Screen.height - 100);
-		startText.text = "Toque para iniciar!";
+		startText.text = "Toque para iniciar!\n Tap to start!\n タップしてスタート！";
 		startText.fontSize = 35;
 		startText.color = new Color(0.95f, 1.0f, 0.35f);
 
